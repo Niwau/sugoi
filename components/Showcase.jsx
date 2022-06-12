@@ -13,5 +13,4 @@ export default function Showcase({id, src}){
 
 const Img = styled.img`
     height: 300px;
-    margin: 0 10px;
 `
