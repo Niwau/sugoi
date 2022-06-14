@@ -38,7 +38,7 @@ const Container = styled.div`
     }
 
     img {
-        height: 400px;
+        height: 40rem;
         border-radius: 15px;
     }
 

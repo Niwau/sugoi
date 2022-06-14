@@ -13,7 +13,7 @@ export default function Showcase({id, src}){
 
 const Img = styled.img`
     margin-top: 25px;
-    height: 300px;
+    height: 30rem;
     transition: 0.2s ease-in-out;
 
     :hover {
