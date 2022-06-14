@@ -7,7 +7,7 @@ export default function Trend({image, englishName, name, synopsis, id }){
         <Container>
             <aside>
                 <img src={image}/>
-                <Link href={`/${id}`}><a><ButtonSeconday>Mais detalhes</ButtonSeconday></a></Link>
+                <Link href={`/anime/${id}`}><a><ButtonSeconday>Mais detalhes</ButtonSeconday></a></Link>
             </aside>
             <main>
                 <h2>{name}</h2>

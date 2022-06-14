@@ -1,9 +1,14 @@
+import Link from "next/link"
 import styled from "styled-components"
 
-export default function Anime({image, title}){
+export default function Anime({image, title, id}){
     return (
         <Container>
-            <img src={image}/>
+           <Link href={`/anime/${id}`} >
+             <a>
+                 <img src={image}/>
+             </a>
+           </Link>
             <p>{title}</p>
         </Container>
     )
@@ -17,7 +22,7 @@ const Container = styled.div`
     img {
         height: 25rem;
         width: 18rem;
-        object-fit: fill;
+        object-fit: cover;
         transition: 0.2s ease-in-out;
 
         :hover {

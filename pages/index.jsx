@@ -57,6 +57,7 @@ export default function Home({seasonNow, trending, upcoming, famous}){
           <Row>
             {seasonNow.data.slice(0,8).map((item, index) => (
               <Anime
+                id = {item.mal_id}
                 key = {index}
                 image = {item.images.webp.large_image_url}
                 title = {item.title}
@@ -68,6 +69,7 @@ export default function Home({seasonNow, trending, upcoming, famous}){
           <Row>
             {upcoming.data.slice(0,8).map((item, index) => (
               <Anime
+                id = {item.mal_id}
                 key = {index}
                 image = {item.images.webp.large_image_url}
                 title = {item.title}
@@ -79,6 +81,7 @@ export default function Home({seasonNow, trending, upcoming, famous}){
           <Row>
             {famous.data.slice(0,8).map((item, index) => (
               <Anime
+                id = {item.mal_id}
                 key = {index}
                 image = {item.images.webp.large_image_url}
                 title = {item.title}
