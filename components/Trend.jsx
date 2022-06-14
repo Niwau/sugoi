@@ -30,6 +30,13 @@ const Container = styled.div`
         gap: 10px;
     }
 
+    p {
+        margin-top: 10px;
+        max-height: 300px;
+        min-width: 450px;
+        overflow: auto;
+    }
+
     img {
         height: 400px;
         border-radius: 15px;

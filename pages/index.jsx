@@ -7,6 +7,8 @@ import Row from "../components/Row";
 import Showcase from "../components/Showcase";
 import Trend from "../components/Trend";
 import Arrow from "../public/arrow-down.svg"
+import Title from "../components/Title";
+import Anime from "../components/Anime";
 
 export default function Home({seasonNow, trending}){
   
@@ -49,6 +51,44 @@ export default function Home({seasonNow, trending}){
           synopsis = {item.synopsis}
           />
         ))}
+
+        <section style={{width: '100%'}}>
+
+          <Title>Temporada <span>atual</span></Title>
+          <Row>
+            {seasonNow.data.slice(0,8).map((item, index) => (
+              <Anime
+                key = {index}
+                image = {item.images.webp.large_image_url}
+                title = {item.title}
+              />
+            ))}
+          </Row>
+
+          <Title>Em <span>breve</span></Title>
+          <Row>
+            {seasonNow.data.slice(0,8).map((item, index) => (
+              <Anime
+                key = {index}
+                image = {item.images.webp.large_image_url}
+                title = {item.title}
+              />
+            ))}
+          </Row>
+
+          <Title>Mais <span>famosos</span></Title>
+          <Row>
+            {seasonNow.data.slice(0,8).map((item, index) => (
+              <Anime
+                key = {index}
+                image = {item.images.webp.large_image_url}
+                title = {item.title}
+              />
+            ))}
+          </Row>
+
+        </section>
+
 
       </Main>
 

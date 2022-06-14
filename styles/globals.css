@@ -46,7 +46,7 @@ h3 {
 
 p {
     font-size: 1.5rem;
-    margin-top: 10px;
+    color: var(--black);
 }
 
 h4{
