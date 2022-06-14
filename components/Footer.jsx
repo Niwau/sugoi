@@ -1,10 +1,12 @@
+import Image from "next/image"
+
 import styled from "styled-components"
 
 export default function Footer(){
     return (
         <Container>
             <p>Feito com ❤ por Niwau</p>
-            <a target = "blank" href="https://github.com/Niwau"><img src="github.svg"/></a>
+            <a target = "blank" href="https://github.com/Niwau"><Image width={'30px'} height={'30px'} src="/github.svg"/></a>
         </Container>
     )
 }

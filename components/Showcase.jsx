@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export default function Showcase({id, src}){
     return (
-        <Link href={`/${id}`} >
+        <Link href={`/anime/${id}`} >
             <a>
                 <Img src = {src}/>
             </a>
