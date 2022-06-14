@@ -5,9 +5,10 @@ import Hero from "../components/Hero";
 import Main from "../components/Main";
 import Row from "../components/Row";
 import Showcase from "../components/Showcase";
+import Trend from "../components/Trend";
 import Arrow from "../public/arrow-down.svg"
 
-export default function Home({seasonNow}){
+export default function Home({seasonNow, trending}){
   
   return (
     <div>
@@ -37,6 +38,18 @@ export default function Home({seasonNow}){
           title = {<h1>Animes <span>em alta</span> 🔥</h1>}
           subtitle = "Veja os top 3 animes da temporada atual que estão fazendo sucesso!"
         />
+
+        {trending.data.slice(0,3).map((item, index) => (
+          <Trend
+          id = {item.mal_id}
+          key = {index}
+          image = {item.images.webp.large_image_url}
+          name = {item.title}
+          englishName = {item.title_english}
+          synopsis = {item.synopsis}
+          />
+        ))}
+
       </Main>
 
     </div>
@@ -48,12 +61,16 @@ export default function Home({seasonNow}){
 
 export async function getStaticProps(){
 
-  const response = await fetch("https://api.jikan.moe/v4/seasons/now");
-  const data = await response.json();
-  
+  const responseSeasonNow = await fetch("https://api.jikan.moe/v4/seasons/now");
+  const seasonNow = await responseSeasonNow.json();
+
+  const responseTrending = await fetch("https://api.jikan.moe/v4/top/anime?filter=airing");
+  const trending = await responseTrending.json();
+
   return {
     props: {
-      seasonNow: data,
+      seasonNow: seasonNow,
+      trending: trending,
     }
   }
 

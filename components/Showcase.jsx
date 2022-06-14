@@ -13,4 +13,11 @@ export default function Showcase({id, src}){
 
 const Img = styled.img`
     height: 300px;
+    transition: 0.2s ease-in-out;
+
+    :hover {
+        transform: translateY(-15px);
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1)
+    }
+
 `

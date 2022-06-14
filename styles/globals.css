@@ -13,6 +13,10 @@ html {
     font-size: 10px;
 }
 
+a {
+    text-decoration: none;
+}
+
 * {
     font-family: Poppins;
     color: var(--black);
@@ -21,12 +25,28 @@ html {
     box-sizing: border-box;
 }
 
-span{
+span {
     color: var(--primary);
 }
 
-h1{
+h1 {
     font-size: 4.5rem;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--black-50);
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 10px;
 }
 
 h4{
