@@ -11,6 +11,7 @@ export default function Title({children}){
 const Container = styled.div`
 
     margin-left: 40px;
+    margin-top: 12px;
 
     h2 {
         font-size: 2.2rem;

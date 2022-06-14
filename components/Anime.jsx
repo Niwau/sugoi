@@ -15,6 +15,17 @@ const Container = styled.div`
     text-align: center;
 
     img {
-        height: 250px;
+        height: 25rem;
+        width: 18rem;
+        object-fit: fill;
+        transition: 0.2s ease-in-out;
+
+        :hover {
+            transform: translateY(-15px);
+            box-shadow: 0 5px 5px rgba(0,0,0,0.1)
+        }
     }
+
+
+
 `

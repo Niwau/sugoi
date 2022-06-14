@@ -12,6 +12,7 @@ export default function Showcase({id, src}){
 }
 
 const Img = styled.img`
+    margin-top: 25px;
     height: 300px;
     transition: 0.2s ease-in-out;
 

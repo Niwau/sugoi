@@ -10,7 +10,7 @@ import Arrow from "../public/arrow-down.svg"
 import Title from "../components/Title";
 import Anime from "../components/Anime";
 
-export default function Home({seasonNow, trending}){
+export default function Home({seasonNow, trending, upcoming, famous}){
   
   return (
     <div>
@@ -53,7 +53,6 @@ export default function Home({seasonNow, trending}){
         ))}
 
         <section style={{width: '100%'}}>
-
           <Title>Temporada <span>atual</span></Title>
           <Row>
             {seasonNow.data.slice(0,8).map((item, index) => (
@@ -67,7 +66,7 @@ export default function Home({seasonNow, trending}){
 
           <Title>Em <span>breve</span></Title>
           <Row>
-            {seasonNow.data.slice(0,8).map((item, index) => (
+            {upcoming.data.slice(0,8).map((item, index) => (
               <Anime
                 key = {index}
                 image = {item.images.webp.large_image_url}
@@ -78,7 +77,7 @@ export default function Home({seasonNow, trending}){
 
           <Title>Mais <span>famosos</span></Title>
           <Row>
-            {seasonNow.data.slice(0,8).map((item, index) => (
+            {famous.data.slice(0,8).map((item, index) => (
               <Anime
                 key = {index}
                 image = {item.images.webp.large_image_url}
@@ -86,15 +85,9 @@ export default function Home({seasonNow, trending}){
               />
             ))}
           </Row>
-
         </section>
-
-
       </Main>
-
     </div>
-    
-
 
   )
 }
@@ -107,10 +100,18 @@ export async function getStaticProps(){
   const responseTrending = await fetch("https://api.jikan.moe/v4/top/anime?filter=airing");
   const trending = await responseTrending.json();
 
+  const responseUpcoming = await fetch("https://api.jikan.moe/v4/seasons/upcoming");
+  const upcoming = await responseUpcoming.json();
+
+  const responseFamous = await fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity");
+  const famous = await responseFamous.json();
+
   return {
     props: {
       seasonNow: seasonNow,
       trending: trending,
+      upcoming: upcoming,
+      famous: famous,
     }
   }
 
