@@ -95,7 +95,7 @@ export default function Home({seasonNow, trending, upcoming, famous}){
   )
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
 
   const responseSeasonNow = await fetch("https://api.jikan.moe/v4/seasons/now");
   const seasonNow = await responseSeasonNow.json();
