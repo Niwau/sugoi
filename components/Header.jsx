@@ -1,13 +1,23 @@
+import {useRouter} from "next/router"
+
 import styled from "styled-components"
 import Image from "next/image"
 import search_icon from "../public/search.svg"
 
 export default function Header(){
 
+    const router = useRouter();
+    const Search = (event) => {
+
+        if(event.key == 'Enter'){
+            router.push('/anime/search')
+        }
+    }
+
     return (
         <Container>
             <div>
-                <input type="text"/>
+                <input onKeyPress={Search} type={"text"}/>
                 <Image src={search_icon}/>
             </div>
         </Container>

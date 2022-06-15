@@ -6,9 +6,9 @@ import Title from "../../components/Title";
 
 export default function anime({anime,related}){
 
-    const genres = anime.data.genres.map(item => `${item.name} `);
+    const genres = anime.data.genres.map(item => `${item.name},`);
 
-    const themes = anime.data.themes.map(item => `${item.name} `);
+    const themes = anime.data.themes.map(item => `${item.name},`);
 
     return (
         <div>
@@ -19,11 +19,12 @@ export default function anime({anime,related}){
                 image = {anime.data.images.webp.large_image_url}
             />
 
-            <footer style={{display: 'flex', justifyContent: 'space-between', margin: '0 40px', alignItems: 'center'}}>
+            <footer style={{display: 'flex', justifyContent: 'space-between', margin: '0 40px'}}>
+                
                 <div>
                     <Title><span>Animes</span> relacionados 🎎</Title>
                     <Row>
-                        {related.data.slice(0,6).map((item, index) => (
+                        {related.data.slice(0,5).map((item, index) => (
                             <Anime
                                 title = {item.entry.title}
                                 image = {item.entry.images.webp.large_image_url}

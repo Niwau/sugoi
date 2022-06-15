@@ -18,10 +18,10 @@ const Container = styled.div`
 
     width: min-content;
     text-align: center;
+    flex: 1 1 auto;
 
     img {
-        height: 25rem;
-        width: 18rem;
+        width: 20rem;
         object-fit: cover;
         transition: 0.2s ease-in-out;
 

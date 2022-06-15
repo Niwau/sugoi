@@ -28,6 +28,6 @@ const Container = styled.div`
     border: 2px solid var(--primary);
     height: fit-content;
     padding: 20px 40px;
-    min-width: 300px;
     border-radius: 25px;
+    width: 320px;
 `
