@@ -18,7 +18,7 @@ export default function AnimeDetails({title, englishTitle, synopsis, image}){
 const Container = styled.div`
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 50px;
     margin: 50px 40px;
 
