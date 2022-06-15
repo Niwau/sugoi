@@ -5,6 +5,11 @@ import Row from "../../components/Row";
 import Title from "../../components/Title";
 
 export default function anime({anime,related}){
+
+    const genres = anime.data.genres.map(item => `${item.name} `);
+
+    const themes = anime.data.themes.map(item => `${item.name} `);
+
     return (
         <div>
             <AnimeDetails
@@ -30,8 +35,8 @@ export default function anime({anime,related}){
                 </div>
 
                 <DetailBox
-                    genres = {''}
-                    themes = {''}
+                    genres = {genres}
+                    themes = {themes}
                     episodes = {anime.data.episodes}
                     status = {anime.data.status}
                     year = {anime.data.year}
