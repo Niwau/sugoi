@@ -97,6 +97,9 @@ export default function Home({seasonNow, trending, upcoming, famous}){
 
 export async function getServerSideProps(){
 
+  const responseFamous = await fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity");
+  const famous = await responseFamous.json();
+
   const responseSeasonNow = await fetch("https://api.jikan.moe/v4/seasons/now");
   const seasonNow = await responseSeasonNow.json();
 
@@ -105,9 +108,6 @@ export async function getServerSideProps(){
 
   const responseUpcoming = await fetch("https://api.jikan.moe/v4/seasons/upcoming");
   const upcoming = await responseUpcoming.json();
-
-  const responseFamous = await fetch("https://api.jikan.moe/v4/top/anime?filter=bypopularity");
-  const famous = await responseFamous.json();
 
   return {
     props: {
